@@ -65,12 +65,6 @@ export default function PaginaLogin({ aoAutenticar }) {
           <span>Ainda não possui cadastro? </span>
           <Link to="/cadastro">Criar conta de cliente</Link>
         </div>
-
-        <div className="dica-acesso">
-          <strong>Agentes pré-cadastrados para teste:</strong>
-          <div>Empresa: <code>empresa</code> / <code>empresa123</code></div>
-          <div>Banco: <code>banco</code> / <code>banco123</code></div>
-        </div>
       </div>
     </div>
   );

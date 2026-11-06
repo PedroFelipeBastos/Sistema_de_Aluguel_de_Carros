@@ -1,18 +1,18 @@
 # 🚗 Sistema de Aluguel de Carros 👨‍💻
 
 > [!NOTE]
-> Sistema web para gestão de pedidos e contratos de aluguel de automóveis, com avaliação financeira por agentes (empresas e bancos) e emissão de contratos associados a linhas de crédito.
+> Sistema web para apoio à gestão de aluguéis de automóveis, permitindo efetuar, cancelar e modificar pedidos, bem como avaliá-los financeiramente e executar contratos.
 
 <table>
   <tr>
     <td width="800px">
       <div align="justify">
-        Este projeto foi desenvolvido na disciplina de <b>Desenvolvimento e Integração de Aplicações Web (DIAW)</b> do curso de <b>Engenharia de Software da PUC Minas</b>, sob orientação do <a href="https://github.com/joaopauloaramuni">Prof. Dr. João Paulo Carneiro Aramuni</a>. O sistema informatiza o ciclo completo de locação de veículos pela Internet: clientes cadastrados introduzem, consultam, modificam e cancelam pedidos de aluguel; agentes (empresas locadoras e bancos) avaliam financeiramente as solicitações e formalizam contratos de aluguel, definindo a titularidade do veículo e a eventual associação a contratos de crédito bancário.
+        Projeto desenvolvido no Laboratório 02 da disciplina de <b>Desenvolvimento e Integração de Aplicações Web (DIAW)</b> do curso de <b>Engenharia de Software da PUC Minas</b>, lecionada pelo <a href="https://github.com/joaopauloaramuni">Prof. Dr. João Paulo Carneiro Aramuni</a>. O sistema apoia a gestão de aluguéis de automóveis pela Internet: clientes cadastrados podem introduzir, consultar, modificar e cancelar pedidos de aluguel, enquanto agentes (empresas e bancos) avaliam os pedidos do ponto de vista financeiro e executam os contratos de aluguel.
       </div>
     </td>
     <td>
       <div>
-        <img src="https://joaopauloaramuni.github.io/image/logo_ES_vertical.png" alt="Logo Engenharia de Software" width="120px"/>
+        <img src="https://joaopauloaramuni.github.io/image/logo_ES_vertical.png" alt="Logo do Projeto" width="120px"/>
       </div>
     </td>
   </tr> 
@@ -50,54 +50,49 @@
 
 ## 📝 Sobre o Projeto
 
-O **Sistema de Aluguel de Carros** apoia a gestão de aluguéis de automóveis através da Internet, subdividindo-se em dois subsistemas integrados:
+O sistema foi subdividido em dois subsistemas: um para gestão de pedidos e contratos (back-end em Spring Boot) e outro para a construção dinâmica das páginas web (front-end em React + Vite).
 
-1. **Subsistema de Gestão de Pedidos e Contratos (Back-end):** API RESTful em Spring Boot seguindo a arquitetura MVC/camadas.
-2. **Subsistema de Construção Dinâmica das Páginas Web (Front-end):** Aplicação SPA desenvolvida com React + Vite.
-
-### Regras de Negócio Atendidas
-- **Autenticação obrigatória:** o acesso ao sistema exige cadastro prévio e login com usuário e senha.
-- **Contratantes (Clientes):** armazenamento de RG, CPF, Nome, Endereço, Profissão, entidades empregadoras e respectivos rendimentos auferidos (máximo de 3).
-- **Automóveis:** registro de matrícula, ano, marca, modelo, placa e proprietário atual.
-- **Ciclo do Pedido:** clientes introduzem, modificam, consultam e cancelam pedidos; agentes (empresas e bancos) avaliam financeiramente os pedidos e emitem parecer positivo ou negativo.
-- **Execução do Contrato:** pedidos aprovados podem ser convertidos em contratos de aluguel, registrando a propriedade do automóvel (cliente, empresa ou banco) e permitindo associar um contrato de crédito concedido por um banco agente.
+- O acesso ao sistema exige cadastro prévio e autenticação (usuário e senha).
+- Sobre os contratantes (clientes), são armazenados RG, CPF, Nome, Endereço, profissão, entidades empregadoras e respectivos rendimentos auferidos (máximo de 3).
+- Sobre os automóveis, o sistema registra matrícula, ano, marca, modelo, placa e proprietário.
+- Clientes podem introduzir, modificar, consultar e cancelar pedidos de aluguel.
+- Agentes (empresas e bancos) podem modificar e avaliar pedidos financeiramente e, em caso de parecer positivo, executar o contrato registrando a propriedade do veículo (cliente, empresa ou banco) e eventual contrato de crédito bancário.
 
 ---
 
 ## ✨ Funcionalidades Principais
 
-- 🔐 **Autenticação e Autorização JWT:** Login obrigatório para clientes e agentes com controle de acesso por papel (`CLIENTE` e `AGENTE`).
-- 👤 **CRUD Completo de Clientes:** Cadastro, consulta, atualização e exclusão de contratantes com até 3 rendimentos.
-- 🚘 **Gestão da Frota de Automóveis:** Cadastro, edição, listagem e exclusão de veículos pelos agentes.
-- 📋 **Gestão de Pedidos de Aluguel:** Criação, modificação, consulta de status e cancelamento de pedidos com verificação de conflito de datas.
-- 🏦 **Avaliação Financeira e Contratos:** Parecer financeiro por agentes e formalização de contrato de aluguel com opção de contrato de crédito bancário.
+- **Autenticação:** Login de usuários (clientes e agentes) com token JWT.
+- **CRUD de Clientes:** Cadastro, consulta, edição e exclusão de clientes e seus rendimentos (até 3).
+- **CRUD de Automóveis:** Cadastro, listagem, atualização e remoção de veículos.
+- **Pedidos de Aluguel:** Criação, modificação, cancelamento e consulta de status do pedido.
+- **Avaliação e Contratos:** Parecer financeiro pelos agentes e execução do contrato de aluguel (com opção de contrato de crédito concedido por banco agente).
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
 ### 💻 Front-end
-* **Biblioteca:** React 19 + React Router DOM 7
-* **Build Tool:** Vite 8
-* **Estilização:** CSS3 modular
+* **Biblioteca:** React + React Router DOM
+* **Build Tool:** Vite
+* **Estilização:** CSS
 
 ### 🖥️ Back-end
 * **Linguagem:** Java 25 (JDK 25)
-* **Framework:** Spring Boot 4.0.9 (Spring Web MVC, Spring Data JPA, Validation)
-* **Segurança:** Spring Security + OAuth2 Resource Server (JWT HS256 + BCrypt)
-* **Banco de Dados:** Supabase (PostgreSQL) em produção e H2 Database em memória para desenvolvimento local
-* **Build:** Apache Maven
+* **Framework:** Spring Boot 4.0.x (Spring Web MVC, Spring Data JPA, Validation, Security)
+* **Banco de Dados:** Supabase (PostgreSQL) / H2 (ambiente local de desenvolvimento)
+* **Build e Dependências:** Apache Maven
 
 ---
 
 ## 🏗 Arquitetura
 
-O sistema adota a arquitetura **MVC em camadas**, separando responsabilidades entre apresentação, controle, regras de negócio e persistência:
+O back-end utiliza a arquitetura **MVC em camadas**:
 
-- **Controller (`com.aluguelcarros.controller`):** recebe as requisições HTTP REST, valida os DTOs de entrada e retorna os DTOs de resposta.
-- **Service (`com.aluguelcarros.service`):** concentra as regras de negócio (limite de 3 rendimentos, validação de conflito de datas, transição de status dos pedidos e regras de propriedade/crédito).
-- **Repository (`com.aluguelcarros.repository`):** interfaces Spring Data JPA para comunicação com o banco PostgreSQL/Supabase.
-- **Model (`com.aluguelcarros.model`):** entidades JPA (`Usuario`, `Cliente`, `Agente`, `Rendimento`, `Automovel`, `Pedido`, `Contrato`, `ContratoCredito`).
+- **Controller:** recebe as requisições HTTP da interface web e retorna os dados em JSON.
+- **Service:** implementa as regras de negócio de clientes, automóveis, pedidos e contratos.
+- **Repository:** comunicação com o banco de dados via Spring Data JPA / Hibernate.
+- **Model / DTO:** entidades persistentes e objetos de transferência de dados.
 
 ---
 
@@ -106,29 +101,29 @@ O sistema adota a arquitetura **MVC em camadas**, separando responsabilidades en
 ### Pré-requisitos
 * **Java JDK:** 25
 * **Apache Maven:** 3.9+
-* **Node.js:** 20+ (com npm)
+* **Node.js:** 20+
 
 ---
 
 ### 🔑 Variáveis de Ambiente
 
-#### 1. Back-end (`backend/.env.example`)
-Por padrão o perfil `dev` utiliza banco **H2 em memória** sem necessidade de configuração extra. Para conectar ao **Supabase (PostgreSQL)**, ative o perfil `prod` e defina:
+#### 1. Back-end (Spring Boot)
+No perfil padrão (`dev`), o sistema roda com banco H2 em memória. Para conectar ao Supabase (PostgreSQL), utilize o perfil `prod` com as variáveis abaixo (veja `backend/.env.example`):
 
 | Variável | Descrição | Exemplo |
 | :--- | :--- | :--- |
-| `PERFIL` | Perfil de execução (`dev` ou `prod`) | `prod` |
-| `SERVER_PORT` | Porta do servidor Spring Boot | `8080` |
-| `SUPABASE_DB_URL` | URL JDBC do Supabase PostgreSQL | `jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require` |
-| `SUPABASE_DB_USUARIO` | Usuário do banco no Supabase | `postgres.seu_projeto` |
-| `SUPABASE_DB_SENHA` | Senha do banco no Supabase | `sua_senha` |
-| `JWT_SECRET` | Chave secreta (mín. 32 caracteres) para assinar tokens JWT | `chave-secreta-com-32-caracteres-min` |
+| `PERFIL` | Perfil ativo (`dev` ou `prod`) | `prod` |
+| `SERVER_PORT` | Porta do Back-end | `8080` |
+| `SUPABASE_DB_URL` | URL JDBC do Supabase | `jdbc:postgresql://aws-0-sa-east-1.pooler.supabase.com:5432/postgres?sslmode=require` |
+| `SUPABASE_DB_USUARIO` | Usuário do banco | `postgres.seu_projeto` |
+| `SUPABASE_DB_SENHA` | Senha do banco | `sua_senha` |
+| `JWT_SECRET` | Chave secreta para assinatura do JWT | `chave-secreta-com-pelo-menos-32-caracteres` |
 
-#### 2. Front-end (`frontend/.env.example`)
+#### 2. Front-end (React, Vite)
 
 | Variável | Descrição | Exemplo |
 | :--- | :--- | :--- |
-| `VITE_API_URL` | URL base da API do Back-end | `http://localhost:8080/api` |
+| `VITE_API_URL` | URL da API do Back-end | `http://localhost:8080/api` |
 
 ---
 
@@ -139,19 +134,19 @@ Por padrão o perfil `dev` utiliza banco **H2 em memória** sem necessidade de c
 cd backend
 ./mvnw spring-boot:run
 ```
-🚀 *A API estará disponível em `http://localhost:8080`.*
+Back-end disponível em `http://localhost:8080`.
 
-**Agentes pré-cadastrados automaticamente na inicialização:**
-- **Empresa:** usuário `empresa` | senha `empresa123`
-- **Banco:** usuário `banco` | senha `banco123`
+Usuários agentes criados na carga inicial para testes:
+- Empresa: `empresa` / `empresa123`
+- Banco: `banco` / `banco123`
 
-#### Terminal 2: Front-end (React + Vite)
+#### Terminal 2: Front-end (React, Vite)
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
-🎨 *A interface web estará disponível em `http://localhost:5173`.*
+Front-end disponível em `http://localhost:5173`.
 
 ---
 
@@ -164,24 +159,21 @@ npm run dev
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/com/aluguelcarros/
-│       │   ├── config/          # Segurança JWT, CORS e carga inicial
-│       │   ├── controller/      # Endpoints REST (MVC Controllers)
-│       │   ├── dto/             # Objetos de transferência de dados
-│       │   ├── exception/       # Exceções de domínio e handler global
-│       │   ├── model/           # Entidades JPA e Enums
-│       │   ├── repository/      # Repositórios Spring Data JPA
-│       │   ├── security/        # Utilitário de usuário autenticado
-│       │   └── service/         # Regras de negócio
+│       │   ├── config/
+│       │   ├── controller/
+│       │   ├── dto/
+│       │   ├── exception/
+│       │   ├── model/
+│       │   ├── repository/
+│       │   ├── security/
+│       │   └── service/
 │       └── resources/
-│           ├── application.properties
-│           ├── application-dev.properties
-│           └── application-prod.properties
 └── frontend/
     ├── package.json
     └── src/
-        ├── components/          # Cabeçalho e navegação
-        ├── pages/               # Telas (Login, Cadastro, Pedidos, Automóveis, Contratos, Clientes)
-        └── services/            # Cliente HTTP (fetch) integrado à API
+        ├── components/
+        ├── pages/
+        └── services/
 ```
 
 ---
@@ -203,4 +195,4 @@ npm run dev
 
 ## 📄 Licença
 
-Este projeto é distribuído sob a licença **MIT**.
+Este projeto é distribuído sob a **[Licença MIT](https://github.com/joaopauloaramuni/laboratorio-de-desenvolvimento-de-software/blob/main/LICENSE)**.

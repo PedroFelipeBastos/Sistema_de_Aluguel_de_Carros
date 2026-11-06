@@ -331,16 +331,6 @@
   font-size: 0.9rem;
 }
 
-.dica-acesso {
-  margin-top: 1rem;
-  padding: 0.7rem;
-  background-color: #f8fafc;
-  border: 1px dashed #cbd5e1;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  color: #475569;
-}
-
 .texto-vazio {
   color: #64748b;
   font-size: 0.92rem;
