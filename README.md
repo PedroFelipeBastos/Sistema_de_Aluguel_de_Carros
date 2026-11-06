@@ -218,8 +218,8 @@ Ao iniciar o back-end, a classe `CargaInicialDados` cadastra automaticamente os 
 | <img src="./docs/prints/pedido%20aluguel.jpeg" alt="Novo Pedido de Aluguel" width="420px"> | <img src="./docs/prints/pedido%20realizado.jpeg" alt="Pedido Realizado" width="420px"> |
 | **Edição de Dados do Cliente** | **Visão do Agente (Empresa)** |
 | <img src="./docs/prints/home%20editar%20dados.jpeg" alt="Editar Dados do Cliente" width="420px"> | <img src="./docs/prints/home%20conta%20empresa.jpeg" alt="Visão do Agente Empresa" width="420px"> |
-| **Execução de Contrato de Aluguel** | |
-| <img src="./docs/prints/execucao%20de%20contrato.jpeg" alt="Execução de Contrato" width="420px"> | |
+| **Execução de Contrato de Aluguel** | **Banco de Dados no Supabase (PostgreSQL)** |
+| <img src="./docs/prints/execucao%20de%20contrato.jpeg" alt="Execução de Contrato" width="420px"> | <img src="./docs/prints/supabase%20tabelas.png" alt="Tabelas no Supabase" width="420px"> |
 
 ---
 
