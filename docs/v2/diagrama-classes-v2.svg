@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 680" width="980" height="680" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="heranca" markerWidth="11" markerHeight="11" refX="10" refY="5.5" orient="auto">
+      <polygon points="0,0 11,5.5 0,11" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <rect width="980" height="680" fill="#ffffff"/>
+  <text x="490" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Diagrama de Classes — Versão 2 (Modelo Final Alinhado ao Código)</text>
+
+  <!-- Classe Abstrata Usuario -->
+  <g transform="translate(365, 45)">
+    <rect width="250" height="125" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="250" height="36" fill="#dbeafe" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="125" y="15" text-anchor="middle" font-size="10" font-style="italic">&lt;&lt;abstract&gt;&gt;</text>
+    <text x="125" y="30" text-anchor="middle" font-weight="bold" font-size="13">Usuario</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="54">- id: Long</text>
+      <text x="10" y="70">- login: String</text>
+      <text x="10" y="86">- senha: String</text>
+      <text x="10" y="102">- nome: String</text>
+      <line x1="0" y1="108" x2="250" y2="108" stroke="#0f172a"/>
+      <text x="10" y="121" font-style="italic">+ getPapel(): Papel</text>
+    </g>
+  </g>
+
+  <!-- Classe Cliente -->
+  <g transform="translate(30, 195)">
+    <rect width="270" height="150" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="270" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="135" y="19" text-anchor="middle" font-weight="bold" font-size="13">Cliente</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="46">+ MAXIMO_RENDIMENTOS: int = 3</text>
+      <text x="10" y="62">- rg: String</text>
+      <text x="10" y="78">- cpf: String</text>
+      <text x="10" y="94">- endereco: String</text>
+      <text x="10" y="110">- profissao: String</text>
+      <line x1="0" y1="118" x2="270" y2="118" stroke="#0f172a"/>
+      <text x="10" y="136">+ definirRendimentos(List&lt;Rendimento&gt;): void</text>
+    </g>
+  </g>
+
+  <!-- Classe Rendimento (Embeddable) -->
+  <g transform="translate(30, 390)">
+    <rect width="270" height="95" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="270" height="34" fill="#fef3c7" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="135" y="14" text-anchor="middle" font-size="10">&lt;&lt;embeddable&gt;&gt;</text>
+    <text x="135" y="29" text-anchor="middle" font-weight="bold" font-size="13">Rendimento</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="55">- entidadeEmpregadora: String</text>
+      <text x="10" y="73">- valor: BigDecimal</text>
+    </g>
+  </g>
+
+  <!-- Classe Agente -->
+  <g transform="translate(680, 195)">
+    <rect width="270" height="115" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="270" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="135" y="19" text-anchor="middle" font-weight="bold" font-size="13">Agente</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="48">- cnpj: String</text>
+      <text x="10" y="66">- tipoAgente: TipoAgente</text>
+      <line x1="0" y1="78" x2="270" y2="78" stroke="#0f172a"/>
+      <text x="10" y="98">+ isBanco(): boolean</text>
+    </g>
+  </g>
+
+  <!-- Classe Pedido -->
+  <g transform="translate(345, 225)">
+    <rect width="290" height="210" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="290" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="145" y="19" text-anchor="middle" font-weight="bold" font-size="13">Pedido</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="46">- id: Long</text>
+      <text x="10" y="62">- dataInicio: LocalDate</text>
+      <text x="10" y="78">- dataFim: LocalDate</text>
+      <text x="10" y="94">- status: StatusPedido</text>
+      <text x="10" y="110">- dataCriacao: LocalDateTime</text>
+      <text x="10" y="126">- parecer: String</text>
+      <line x1="0" y1="134" x2="290" y2="134" stroke="#0f172a"/>
+      <text x="10" y="150">+ modificar(Automovel, LocalDate, LocalDate): void</text>
+      <text x="10" y="166">+ cancelar(): void</text>
+      <text x="10" y="182">+ avaliar(Agente, boolean, String): void</text>
+      <text x="10" y="198">+ registrarContrato(Contrato): void</text>
+    </g>
+  </g>
+
+  <!-- Classe Automovel -->
+  <g transform="translate(345, 485)">
+    <rect width="290" height="145" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="290" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="145" y="19" text-anchor="middle" font-weight="bold" font-size="13">Automovel</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="46">- id: Long</text>
+      <text x="10" y="64">- matricula: String</text>
+      <text x="10" y="82">- ano: Integer</text>
+      <text x="10" y="100">- marca: String</text>
+      <text x="10" y="118">- modelo: String</text>
+      <text x="10" y="136">- placa: String</text>
+    </g>
+  </g>
+
+  <!-- Classe Contrato -->
+  <g transform="translate(680, 355)">
+    <rect width="270" height="125" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="270" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="135" y="19" text-anchor="middle" font-weight="bold" font-size="13">Contrato</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="48">- id: Long</text>
+      <text x="10" y="66">- tipoProprietario: TipoProprietario</text>
+      <text x="10" y="84">- proprietario: Usuario</text>
+      <text x="10" y="102">- dataAssinatura: LocalDateTime</text>
+    </g>
+  </g>
+
+  <!-- Classe ContratoCredito -->
+  <g transform="translate(680, 520)">
+    <rect width="270" height="115" fill="#ffffff" stroke="#0f172a" stroke-width="1.6"/>
+    <rect width="270" height="28" fill="#e2e8f0" stroke="#0f172a" stroke-width="1.6"/>
+    <text x="135" y="19" text-anchor="middle" font-weight="bold" font-size="13">ContratoCredito</text>
+    <g font-size="11" fill="#0f172a">
+      <text x="10" y="48">- id: Long</text>
+      <text x="10" y="66">- banco: Agente</text>
+      <text x="10" y="84">- valor: BigDecimal</text>
+      <text x="10" y="100">- taxaJurosMensal: BigDecimal</text>
+      <text x="145" y="48">- numeroParcelas: Integer</text>
+    </g>
+  </g>
+
+  <!-- Enums no canto inferior esquerdo -->
+  <g transform="translate(30, 510)" font-size="10.5" fill="#0f172a">
+    <rect width="270" height="125" fill="#f8fafc" stroke="#475569" stroke-width="1.2"/>
+    <text x="135" y="18" text-anchor="middle" font-weight="bold">&lt;&lt;enumeration&gt;&gt; Enums do Domínio</text>
+    <text x="10" y="38">• Papel: CLIENTE, AGENTE</text>
+    <text x="10" y="58">• TipoAgente: EMPRESA, BANCO</text>
+    <text x="10" y="78">• StatusPedido: PENDENTE, APROVADO,</text>
+    <text x="20" y="93">REPROVADO, CANCELADO, CONTRATADO</text>
+    <text x="10" y="113">• TipoProprietario: CLIENTE, EMPRESA, BANCO</text>
+  </g>
+
+  <!-- Herança Cliente -> Usuario e Agente -> Usuario -->
+  <polyline points="165,195 165,105 365,105" fill="none" stroke="#0f172a" stroke-width="1.5" marker-end="url(#heranca)"/>
+  <polyline points="815,195 815,105 615,105" fill="none" stroke="#0f172a" stroke-width="1.5" marker-end="url(#heranca)"/>
+
+  <!-- Associações -->
+  <g stroke="#334155" stroke-width="1.5" fill="none">
+    <line x1="165" y1="345" x2="165" y2="390"/>
+    <line x1="300" y1="280" x2="345" y2="280"/>
+    <line x1="490" y1="435" x2="490" y2="485"/>
+    <line x1="635" y1="265" x2="680" y2="265"/>
+    <line x1="635" y1="395" x2="680" y2="395"/>
+    <line x1="815" y1="310" x2="815" y2="355"/>
+    <line x1="815" y1="480" x2="815" y2="520"/>
+  </g>
+
+  <!-- Multiplicidades -->
+  <g font-size="10.5" fill="#334155" font-weight="bold">
+    <text x="172" y="362">1</text>
+    <text x="172" y="384">0..3</text>
+    <text x="305" y="274">1</text>
+    <text x="323" y="274">0..*</text>
+    <text x="496" y="452">0..*</text>
+    <text x="496" y="480">1</text>
+    <text x="640" y="259">0..*</text>
+    <text x="656" y="259">0..1</text>
+    <text x="640" y="389">1</text>
+    <text x="656" y="389">0..1</text>
+    <text x="822" y="326">1</text>
+    <text x="822" y="350">0..*</text>
+    <text x="822" y="495">1</text>
+    <text x="822" y="515">0..1</text>
+  </g>
+</svg>

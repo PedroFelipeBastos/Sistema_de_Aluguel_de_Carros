@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="920" height="500" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="seta" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect width="920" height="500" fill="#ffffff"/>
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Diagrama de Classes — Versão 1 (Modelo Inicial de Domínio)</text>
+
+  <!-- Classe Cliente -->
+  <g transform="translate(30, 55)">
+    <rect width="230" height="175" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Cliente</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="46">- nome: String</text>
+      <text x="10" y="64">- rg: String</text>
+      <text x="10" y="82">- cpf: String</text>
+      <text x="10" y="100">- endereco: String</text>
+      <text x="10" y="118">- profissao: String</text>
+      <text x="10" y="136">- login: String</text>
+      <text x="10" y="154">- senha: String</text>
+    </g>
+  </g>
+
+  <!-- Classe Rendimento -->
+  <g transform="translate(30, 295)">
+    <rect width="230" height="105" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Rendimento</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="52">- entidadeEmpregadora: String</text>
+      <text x="10" y="72">- valor: BigDecimal</text>
+    </g>
+  </g>
+
+  <!-- Classe Pedido -->
+  <g transform="translate(345, 55)">
+    <rect width="230" height="175" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Pedido</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="48">- id: Long</text>
+      <text x="10" y="66">- dataInicio: LocalDate</text>
+      <text x="10" y="84">- dataFim: LocalDate</text>
+      <text x="10" y="102">- status: String</text>
+      <text x="10" y="120">- parecerFinanceiro: String</text>
+      <line x1="0" y1="132" x2="230" y2="132" stroke="#1e293b"/>
+      <text x="10" y="150">+ introduzir() / + modificar()</text>
+      <text x="10" y="166">+ cancelar() / + avaliar()</text>
+    </g>
+  </g>
+
+  <!-- Classe Automovel -->
+  <g transform="translate(345, 295)">
+    <rect width="230" height="145" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Automovel</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="48">- matricula: String</text>
+      <text x="10" y="66">- ano: Integer</text>
+      <text x="10" y="84">- marca: String</text>
+      <text x="10" y="102">- modelo: String</text>
+      <text x="10" y="120">- placa: String</text>
+    </g>
+  </g>
+
+  <!-- Classe Agente -->
+  <g transform="translate(660, 55)">
+    <rect width="230" height="125" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Agente</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="48">- nome: String</text>
+      <text x="10" y="66">- tipo: String (Empresa/Banco)</text>
+      <text x="10" y="84">- login: String</text>
+      <text x="10" y="102">- senha: String</text>
+    </g>
+  </g>
+
+  <!-- Classe Contrato -->
+  <g transform="translate(660, 220)">
+    <rect width="230" height="110" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">Contrato</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="50">- dataAssinatura: LocalDate</text>
+      <text x="10" y="70">- proprietarioVeiculo: String</text>
+    </g>
+  </g>
+
+  <!-- Classe ContratoCredito -->
+  <g transform="translate(660, 365)">
+    <rect width="230" height="110" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <rect width="230" height="28" fill="#e2e8f0" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" font-weight="bold" font-size="13">ContratoCredito</text>
+    <g font-size="11.5" fill="#0f172a">
+      <text x="10" y="48">- valor: BigDecimal</text>
+      <text x="10" y="68">- taxaJuros: BigDecimal</text>
+      <text x="10" y="88">- parcelas: Integer</text>
+    </g>
+  </g>
+
+  <!-- Relacionamentos -->
+  <g stroke="#334155" stroke-width="1.5" fill="none">
+    <line x1="145" y1="230" x2="145" y2="295"/>
+    <line x1="260" y1="130" x2="345" y2="130"/>
+    <line x1="460" y1="230" x2="460" y2="295"/>
+    <line x1="575" y1="115" x2="660" y2="115"/>
+    <line x1="575" y1="185" x2="660" y2="265"/>
+    <line x1="775" y1="330" x2="775" y2="365"/>
+  </g>
+
+  <!-- Multiplicidades -->
+  <g font-size="11" fill="#334155">
+    <text x="152" y="248">1</text>
+    <text x="152" y="288">0..3</text>
+    <text x="268" y="124">1</text>
+    <text x="322" y="124">0..*</text>
+    <text x="468" y="248">0..*</text>
+    <text x="468" y="288">1</text>
+    <text x="583" y="109">0..*</text>
+    <text x="638" y="109">0..1</text>
+    <text x="583" y="182">1</text>
+    <text x="636" y="255">0..1</text>
+    <text x="782" y="346">1</text>
+    <text x="782" y="361">0..1</text>
+  </g>
+</svg>

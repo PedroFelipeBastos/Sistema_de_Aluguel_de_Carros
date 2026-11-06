@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 560" width="940" height="560" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="dep" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="none" stroke="#334155" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <rect width="940" height="560" fill="#ffffff"/>
+  <text x="470" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">Diagrama de Pacotes (Visão Lógica MVC) — Versão 2 (Modelo Final)</text>
+
+  <!-- Pacote Front-end React + Vite -->
+  <g transform="translate(30, 55)">
+    <rect x="0" y="0" width="140" height="24" fill="#dbeafe" stroke="#1e293b" stroke-width="1.6"/>
+    <rect x="0" y="24" width="260" height="340" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+    <text x="70" y="16" text-anchor="middle" font-size="11" font-weight="bold">frontend (React + Vite)</text>
+
+    <!-- pages -->
+    <rect x="25" y="55" width="90" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="73" width="210" height="80" fill="#ffffff" stroke="#334155"/>
+    <text x="70" y="68" text-anchor="middle" font-size="10.5" font-weight="bold">src.pages</text>
+    <text x="35" y="92" font-size="10.5">• PaginaLogin / PaginaCadastro</text>
+    <text x="35" y="108" font-size="10.5">• PaginaPedidos / PaginaContratos</text>
+    <text x="35" y="124" font-size="10.5">• PaginaClientes / PaginaAutomoveis</text>
+
+    <!-- components -->
+    <rect x="25" y="170" width="110" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="188" width="210" height="48" fill="#ffffff" stroke="#334155"/>
+    <text x="80" y="183" text-anchor="middle" font-size="10.5" font-weight="bold">src.components</text>
+    <text x="35" y="215" font-size="10.5">• Cabecalho (Navegação e Sessão)</text>
+
+    <!-- services -->
+    <rect x="25" y="255" width="95" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="273" width="210" height="65" fill="#ffffff" stroke="#334155"/>
+    <text x="72" y="268" text-anchor="middle" font-size="10.5" font-weight="bold">src.services</text>
+    <text x="35" y="295" font-size="10.5">• api.js (Cliente HTTP REST)</text>
+    <text x="35" y="313" font-size="10.5">• Token Bearer JWT</text>
+  </g>
+
+  <!-- Pacote Back-end Spring Boot -->
+  <g transform="translate(380, 55)">
+    <rect x="0" y="0" width="220" height="24" fill="#dcfce7" stroke="#1e293b" stroke-width="1.6"/>
+    <rect x="0" y="24" width="530" height="465" fill="#f8fafc" stroke="#1e293b" stroke-width="1.6"/>
+    <text x="110" y="16" text-anchor="middle" font-size="11" font-weight="bold">com.aluguelcarros (Spring Boot 4)</text>
+
+    <!-- controller -->
+    <rect x="25" y="50" width="100" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="68" width="230" height="95" fill="#ffffff" stroke="#334155"/>
+    <text x="75" y="63" text-anchor="middle" font-size="10.5" font-weight="bold">controller</text>
+    <text x="35" y="88" font-size="10.5">• AutenticacaoController</text>
+    <text x="35" y="104" font-size="10.5">• ClienteController / AgenteController</text>
+    <text x="35" y="120" font-size="10.5">• AutomovelController</text>
+    <text x="35" y="136" font-size="10.5">• PedidoController / ContratoController</text>
+
+    <!-- dto -->
+    <rect x="280" y="50" width="75" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="280" y="68" width="225" height="95" fill="#ffffff" stroke="#334155"/>
+    <text x="317" y="63" text-anchor="middle" font-size="10.5" font-weight="bold">dto</text>
+    <text x="290" y="88" font-size="10.5">• LoginRequisicao / LoginResposta</text>
+    <text x="290" y="104" font-size="10.5">• ClienteRequisicao / ClienteResposta</text>
+    <text x="290" y="120" font-size="10.5">• PedidoRequisicao / PedidoResposta</text>
+    <text x="290" y="136" font-size="10.5">• ContratoRequisicao / ContratoResposta</text>
+
+    <!-- service -->
+    <rect x="25" y="185" width="85" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="203" width="230" height="100" fill="#ffffff" stroke="#334155"/>
+    <text x="67" y="198" text-anchor="middle" font-size="10.5" font-weight="bold">service</text>
+    <text x="35" y="223" font-size="10.5">• AutenticacaoService / TokenService</text>
+    <text x="35" y="239" font-size="10.5">• ClienteService / AgenteService</text>
+    <text x="35" y="255" font-size="10.5">• AutomovelService</text>
+    <text x="35" y="271" font-size="10.5">• PedidoService / ContratoService</text>
+
+    <!-- config & security & exception -->
+    <rect x="280" y="185" width="190" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="280" y="203" width="225" height="100" fill="#ffffff" stroke="#334155"/>
+    <text x="375" y="198" text-anchor="middle" font-size="10.5" font-weight="bold">config / security / exception</text>
+    <text x="290" y="223" font-size="10.5">• ConfiguracaoSeguranca (JWT)</text>
+    <text x="290" y="239" font-size="10.5">• CargaInicialDados</text>
+    <text x="290" y="255" font-size="10.5">• UsuarioLogado</text>
+    <text x="290" y="271" font-size="10.5">• TratadorGlobalExcecoes</text>
+
+    <!-- repository -->
+    <rect x="25" y="325" width="95" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="25" y="343" width="230" height="100" fill="#ffffff" stroke="#334155"/>
+    <text x="72" y="338" text-anchor="middle" font-size="10.5" font-weight="bold">repository</text>
+    <text x="35" y="363" font-size="10.5">• UsuarioRepository / ClienteRepository</text>
+    <text x="35" y="379" font-size="10.5">• AgenteRepository</text>
+    <text x="35" y="395" font-size="10.5">• AutomovelRepository</text>
+    <text x="35" y="411" font-size="10.5">• PedidoRepository / ContratoRepository</text>
+
+    <!-- model & enums -->
+    <rect x="280" y="325" width="110" height="18" fill="#e2e8f0" stroke="#334155"/>
+    <rect x="280" y="343" width="225" height="100" fill="#ffffff" stroke="#334155"/>
+    <text x="335" y="338" text-anchor="middle" font-size="10.5" font-weight="bold">model / model.enums</text>
+    <text x="290" y="363" font-size="10.5">• Usuario, Cliente, Rendimento, Agente</text>
+    <text x="290" y="379" font-size="10.5">• Automovel, Pedido</text>
+    <text x="290" y="395" font-size="10.5">• Contrato, ContratoCredito</text>
+    <text x="290" y="411" font-size="10.5">• Papel, TipoAgente, StatusPedido...</text>
+  </g>
+
+  <!-- Banco de Dados Supabase -->
+  <g transform="translate(50, 440)">
+    <rect x="0" y="0" width="240" height="80" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.6"/>
+    <text x="120" y="32" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#78350f">Banco de Dados Relacional</text>
+    <text x="120" y="54" text-anchor="middle" font-size="11.5" fill="#92400e">Supabase (PostgreSQL) / H2</text>
+  </g>
+
+  <!-- Setas de Dependência -->
+  <g stroke="#334155" stroke-width="1.5" stroke-dasharray="5,3" fill="none" marker-end="url(#dep)">
+    <line x1="265" y1="360" x2="405" y2="155"/>
+    <line x1="520" y1="163" x2="520" y2="203"/>
+    <line x1="520" y1="303" x2="520" y2="343"/>
+    <line x1="635" y1="115" x2="660" y2="115"/>
+    <line x1="635" y1="250" x2="660" y2="380"/>
+    <line x1="635" y1="395" x2="660" y2="395"/>
+    <line x1="405" y1="450" x2="290" y2="480"/>
+  </g>
+</svg>

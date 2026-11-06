@@ -36,7 +36,7 @@
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
 - [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Arquitetura](#-arquitetura)
+- [Arquitetura e Modelagem UML](#-arquitetura-e-modelagem-uml)
 - [Instalação e Execução](#-instalação-e-execução)
   - [Pré-requisitos](#pré-requisitos)
   - [Variáveis de Ambiente](#-variáveis-de-ambiente)
@@ -85,7 +85,7 @@ O sistema foi subdividido em dois subsistemas: um para gestão de pedidos e cont
 
 ---
 
-## 🏗 Arquitetura
+## 🏗 Arquitetura e Modelagem UML
 
 O back-end utiliza a arquitetura **MVC em camadas**:
 
@@ -93,6 +93,21 @@ O back-end utiliza a arquitetura **MVC em camadas**:
 - **Service:** implementa as regras de negócio de clientes, automóveis, pedidos e contratos.
 - **Repository:** comunicação com o banco de dados via Spring Data JPA / Hibernate.
 - **Model / DTO:** entidades persistentes e objetos de transferência de dados.
+
+Documentação complementar na pasta [`/docs`](./docs):
+- [Histórias do Usuário](./docs/historias-usuario.md)
+- [Evolução dos Modelos UML (Comparação v1 vs v2)](./docs/evolucao-modelos.md)
+
+### Diagramas UML — Versão Inicial (v1) vs. Versão Final (v2)
+
+| Versão 1 (Modelo Inicial) | Versão 2 (Modelo Final Alinhado ao Código) |
+| :---: | :---: |
+| **Diagrama de Casos de Uso (v1)** | **Diagrama de Casos de Uso (v2)** |
+| <img src="./docs/v1/casos-de-uso-v1.svg" alt="Casos de Uso v1" width="420px"> | <img src="./docs/v2/casos-de-uso-v2.svg" alt="Casos de Uso v2" width="420px"> |
+| **Diagrama de Classes (v1)** | **Diagrama de Classes (v2)** |
+| <img src="./docs/v1/diagrama-classes-v1.svg" alt="Diagrama de Classes v1" width="420px"> | <img src="./docs/v2/diagrama-classes-v2.svg" alt="Diagrama de Classes v2" width="420px"> |
+| **Diagrama de Pacotes — Visão Lógica (v1)** | **Diagrama de Pacotes — Visão Lógica (v2)** |
+| <img src="./docs/v1/diagrama-pacotes-v1.svg" alt="Diagrama de Pacotes v1" width="420px"> | <img src="./docs/v2/diagrama-pacotes-v2.svg" alt="Diagrama de Pacotes v2" width="420px"> |
 
 ---
 
@@ -174,6 +189,11 @@ Front-end disponível em `http://localhost:5173`.
         ├── components/
         ├── pages/
         └── services/
+└── docs/
+    ├── historias-usuario.md
+    ├── evolucao-modelos.md
+    ├── v1/
+    └── v2/
 ```
 
 ---
