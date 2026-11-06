@@ -42,6 +42,7 @@
   - [Variáveis de Ambiente](#-variáveis-de-ambiente)
   - [Como Executar a Aplicação](#-como-executar-a-aplicação)
 - [Estrutura de Pastas](#-estrutura-de-pastas)
+- [Demonstração](#-demonstração)
 - [Autores](#-autores)
 - [Agradecimentos](#-agradecimentos)
 - [Licença](#-licença)
@@ -151,10 +152,6 @@ cd backend
 ```
 Back-end disponível em `http://localhost:8080`.
 
-Usuários agentes criados na carga inicial para testes:
-- Empresa: `empresa` / `empresa123`
-- Banco: `banco` / `banco123`
-
 #### Terminal 2: Front-end (React, Vite)
 ```bash
 cd frontend
@@ -162,6 +159,16 @@ npm install
 npm run dev
 ```
 Front-end disponível em `http://localhost:5173`.
+
+### 🔐 Credenciais de Acesso (Agentes Pré-cadastrados)
+
+Ao iniciar o back-end, a classe `CargaInicialDados` cadastra automaticamente os agentes e 3 veículos para avaliação do sistema:
+
+| Perfil | Usuário (Login) | Senha | Função no Sistema |
+| :--- | :--- | :--- | :--- |
+| **Agente (Empresa)** | `empresa` | `empresa123` | Avaliar pedidos, gerenciar automóveis/clientes e executar contratos |
+| **Agente (Banco)** | `banco` | `banco123` | Avaliar pedidos e conceder contratos de crédito bancário |
+| **Cliente** | *Cadastro livre* | *Definida no cadastro* | Criar conta pela tela **Criar conta de cliente** (`/cadastro`) |
 
 ---
 
@@ -192,9 +199,27 @@ Front-end disponível em `http://localhost:5173`.
 └── docs/
     ├── historias-usuario.md
     ├── evolucao-modelos.md
+    ├── prints/
     ├── v1/
     └── v2/
 ```
+
+---
+
+## 🎥 Demonstração
+
+### 🌐 Aplicação Web
+
+| Tela | Captura de Tela |
+| :---: | :---: |
+| **Página de Login** | **Cadastro de Cliente** |
+| <img src="./docs/prints/tela%20login.jpeg" alt="Tela de Login" width="420px"> | <img src="./docs/prints/cadastro%20cliente.jpeg" alt="Cadastro de Cliente" width="420px"> |
+| **Novo Pedido de Aluguel** | **Pedido Realizado e Consulta de Status** |
+| <img src="./docs/prints/pedido%20aluguel.jpeg" alt="Novo Pedido de Aluguel" width="420px"> | <img src="./docs/prints/pedido%20realizado.jpeg" alt="Pedido Realizado" width="420px"> |
+| **Edição de Dados do Cliente** | **Visão do Agente (Empresa)** |
+| <img src="./docs/prints/home%20editar%20dados.jpeg" alt="Editar Dados do Cliente" width="420px"> | <img src="./docs/prints/home%20conta%20empresa.jpeg" alt="Visão do Agente Empresa" width="420px"> |
+| **Execução de Contrato de Aluguel** | |
+| <img src="./docs/prints/execucao%20de%20contrato.jpeg" alt="Execução de Contrato" width="420px"> | |
 
 ---
 
